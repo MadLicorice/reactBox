@@ -3,7 +3,7 @@ var MessageListEntry = (props) => (
     <div className="messageEntry">
       <div className="username">{props.message.username}</div>
       <p className="message">{props.message.text}</p>
-      <span className="date">{props.message.time}</span>
+      <span className="roomname">{props.message.roomname}</span>
     </div>
   </div>
 )

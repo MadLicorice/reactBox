@@ -5,7 +5,18 @@ class App extends React.Component {
     this.state = {
       messages: window.messages
     }
-
+  }
+  
+  componentDidMount() {
+    this.fetchMessages();
+  }
+  
+  fetchMessages() {
+    this.props.getter((messages) => {
+      this.setState({
+        messages: messages.results
+      })
+    })
   }
   
   render() {
@@ -13,7 +24,7 @@ class App extends React.Component {
       <div>
         <h1>ReactBox</h1>
         <div className="inputContainer">
-          <Search />
+          <Submit />
         </div>
         <div className="messagesContainer">
           <MessageList messages={this.state.messages}/>

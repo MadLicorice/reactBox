@@ -1,4 +1,4 @@
 ReactDOM.render(
-  <App />,
+  <App getter={getMessages} poster={postMessages}/>,
   document.getElementById('app')
 );
